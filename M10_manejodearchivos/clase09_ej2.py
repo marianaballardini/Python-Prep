@@ -1,22 +1,13 @@
-import sys
-# Comprobación de seguridad, ejecutar sólo si se recibe 3 argumentos
-if len(sys.argv) == 2:
-    import datetime
-    import os
-    marca_de_tiempo = datetime.datetime.now()
-    marca_de_tiempo = int(datetime.datetime.timestamp(marca_de_tiempo))
+import datetime
+x = datetime.datetime.now()
+print("Ahora =",x)
+x = datetime.datetime(2020, 5, 10)
+print("Fecha fija =",x)
 
-    #temperatura = sys.argv[1]
-    #humedad = sys.argv[2]
-    lluvia = sys.argv[1]
-    temperatura = input('Ingrese la temperatura en grados centígrados')
-    humedad = input('Ingrese el porcentaje de humedad')
-    linea = str(marca_de_tiempo) + ',' + temperatura + ',' + humedad + ',' + lluvia
-
-    logs_lluvia = open('clase09_ej2.csv', 'a')
-    logs_lluvia.write(linea+'\n')
-    logs_lluvia.close()
-
-else:
-    print("ERROR: Introdujo una cantidad de argumentos distinta de tres (3)")
-    print('Ejemplo: clase09_ej1.py <temperatura> <humedad> <True o False>')
+fecha_hora = '2022-05-10 12:30:00'
+objeto_datetime = datetime.datetime.strptime(fecha_hora, '%Y-%m-%d %H:%M:%S')
+print("objeto datetime =", objeto_datetime)
+marca_de_tiempo = datetime.datetime.timestamp(objeto_datetime)
+print("timestamp =", marca_de_tiempo)
+fecha_hora2 = datetime.datetime.fromtimestamp(marca_de_tiempo)
+print("fecha hora =", fecha_hora2)
