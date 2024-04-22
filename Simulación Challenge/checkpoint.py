@@ -81,7 +81,7 @@ def ClaseAnimal(especie, color):
             self.edad +=1
             return self.edad
     
-    return Animal(0,especie , color)
+    return Animal(especie , color)
 a1=ClaseAnimal("perro","negro")
 a1.CumpliAnios()
 a1.CumpliAnios()
